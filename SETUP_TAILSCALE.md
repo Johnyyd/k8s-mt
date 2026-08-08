@@ -26,3 +26,25 @@ Sau khi xác thực xong, bạn có thể kiểm tra địa chỉ IP (dải `100
 ```bash
 tailscale ip -4
 ```
+
+## 3. Cấu hình phân giải tên miền nội bộ (Hosts)
+
+Sửa lại file `/etc/hosts` để ưu tiên hoặc bổ sung IP Tailscale cho các node:
+
+```bash
+sudo nano /etc/hosts
+```
+
+Nội dung file `/etc/hosts` cần được cấu hình như sau:
+
+```text
+# IP tĩnh cục bộ (LAN)
+192.168.100.201 ubuntu-server-master-1
+192.168.100.202 ubuntu-server-master-2
+192.168.100.203 ubuntu-server-master-3
+
+# IP của Tailscale (VPN)
+100.x.x.x ubuntu-server-master-1
+100.x.x.x ubuntu-server-master-2
+100.x.x.x ubuntu-server-master-3
+```

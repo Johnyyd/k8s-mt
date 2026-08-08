@@ -44,7 +44,7 @@ network:
     ens33:
       dhcp4: false
       addresses:
-        - 192.168.100.51/24
+        - 192.168.100.201/24
       routes:
         - to: default
           via: 192.168.100.1
